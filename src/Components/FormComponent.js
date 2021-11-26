@@ -45,7 +45,7 @@ function FormComponent(props) {
                     </select>
                 </fieldset>
                 
-                <button></button>
+                <button>SUBMIT</button>
             </form>
 
         </div>
