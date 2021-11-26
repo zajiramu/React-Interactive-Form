@@ -10,7 +10,7 @@ class FormContainer extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange() {
+    handleChange(event) {
 
     }
 
