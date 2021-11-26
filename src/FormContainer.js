@@ -3,7 +3,10 @@ import FormComponent from "./Components/FormComponent"
 
 class FormContainer extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = {
+            
+        };
     }
 
     render() {
