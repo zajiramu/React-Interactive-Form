@@ -15,7 +15,9 @@ class FormContainer extends React.Component {
     }
 
     render() {
-        return <FormComponent />
+        return <FormComponent 
+                    state = { {...this.state} }
+               />
     }
 }
 
