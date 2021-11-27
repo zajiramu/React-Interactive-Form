@@ -11,7 +11,10 @@ class FormContainer extends React.Component {
     }
 
     handleChange(event) {
-
+        const inputElementType = event.target.type;
+        const inputElementName = event.target.name;
+        const inputElementValue = inputElementType === "checkbox" ? event.target.checked : event.target.value;
+        
     }
 
     render() {
