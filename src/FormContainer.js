@@ -17,6 +17,7 @@ class FormContainer extends React.Component {
     render() {
         return <FormComponent 
                     state = { {...this.state} }
+                    handleChange = {this.handleChange}
                />
     }
 }
