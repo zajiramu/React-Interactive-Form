@@ -5,9 +5,11 @@ class FormContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ""
+            name: "Please Enter Your Name"
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
     }
 
     handleChange(event) {
@@ -17,10 +19,20 @@ class FormContainer extends React.Component {
         
     }
 
+    handleFocus(event) {
+        if(event.target.value === "Please Enter Your Name") this.setState( {name: ""} )
+    }
+
+    handleBlur(event) {
+        if(event.target.value === "") this.setState( {name: "Please Enter Your Name"} )
+    }
+
     render() {
         return <FormComponent 
                     state = { {...this.state} }
                     handleChange = {this.handleChange}
+                    handleFocus = {this.handleFocus}
+                    handleBlur = {this.handleBlur}
                />
     }
 }

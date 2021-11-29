@@ -6,7 +6,10 @@ function FormComponent(props) {
             <form>
                 <fieldset> 
                     <legend>Basic Info</legend>
-                    <label>Name: <input type="text" name="name" value={props.state.name} onChange={props.handleChange}></input></label> <br/>
+                    <label>Name: <input type="text" name="name" value={props.state.name} onChange={props.handleChange} 
+                                        onFocus={props.handleFocus}
+                                        onBlur={props.handleBlur}
+                                  ></input></label> <br/>
                     <label>Email: <input type="text"></input></label> <br/>
                     <label>Job Role:</label>
                     <select>
