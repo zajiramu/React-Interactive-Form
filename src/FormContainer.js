@@ -6,6 +6,7 @@ class FormContainer extends React.Component {
         super(props);
         this.state = {
             name: "Please Enter Your Name",
+            hasName: true,
             email: "Please Enter Your Email"
         };
         this.handleChange = this.handleChange.bind(this);
@@ -26,7 +27,7 @@ class FormContainer extends React.Component {
     }
 
     handleBlur(event) {
-        if(event.target.value === "") this.setState( {name: "Please Enter Your Name"} )
+        if(event.target.value === "") this.setState( {hasName: false} )
     }
 
     render() {
