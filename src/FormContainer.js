@@ -18,16 +18,22 @@ class FormContainer extends React.Component {
         const inputElementType = event.target.type;
         const inputElementName = event.target.name;
         const inputElementValue = inputElementType === "checkbox" ? event.target.checked : event.target.value;
+        //console.log(inputElementValue, inputElementName)
         this.setState( {[inputElementName]: inputElementValue} );
     }
 
     handleFocus(event) {
-        const inputElementName = event.target.name;
-        this.setState( {name: ""} )
     }
 
     handleBlur(event) {
-        if(event.target.value === "") this.setState( {hasName: false} )
+        const inputElementName = event.target.name;
+        const inputElementValue = event.target.value;
+        const hasProperty = "has" + inputElementName[0].toUpperCase() + inputElementName.substring(1);
+        const newState = {
+            [inputElementName]: inputElementValue,
+            [hasProperty]: inputElementValue === "" ? false : true
+        };
+        this.setState(newState);
     }
 
     render() {

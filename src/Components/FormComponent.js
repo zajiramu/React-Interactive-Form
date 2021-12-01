@@ -1,21 +1,17 @@
 import React from "react"
 
 function FormComponent(props) {
-    // logic to handle conditional rendering of error messages for input text elements
-    const nameErrorDiv = props.state.hasName ? <div></div> : <div>{"*Please Enter A Name*"}</div>;
-    const nameInputClassName = props.state.hasName ? "" : "error-message";
     return (
         <div>
             <form>
                 <fieldset> 
                     <legend>Basic Info</legend>
                     <label>Name: </label>
-                    {nameErrorDiv}
-                    <input type="text" name="name" value={props.state.name} onChange={props.handleChange} 
-                           onFocus={props.handleFocus} onBlur={props.handleBlur} className={nameInputClassName}></input> <br/>
+                    <input type="text" name="name" value={props.state.name} 
+                           onChange={props.handleChange} onBlur={props.handleBlur} onFocus={props.handleFocus}></input> <br/>
                     <label>Email:</label> 
-                    <input type="text" name="email" value={props.state.email} onChange={props.handleChange} 
-                           onFocus={props.handleFocus} onBlur={props.handleBlur}></input> <br/>
+                    <input type="text" name="email" value={props.state.email} 
+                           onChange={props.handleChange} onBlur={props.handleBlur} onFocus={props.handleFocus}></input> <br/>
                     <label>Job Role:</label>
                     <select>
                         <option>Full-Stack Web Developer</option>
