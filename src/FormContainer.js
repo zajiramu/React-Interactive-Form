@@ -21,7 +21,8 @@ class FormContainer extends React.Component {
     }
 
     handleFocus(event) {
-        if(event.target.value === "Please Enter Your Name") this.setState( {name: ""} )
+        const inputElementName = event.target.name;
+        this.setState( {name: ""} )
     }
 
     handleBlur(event) {
