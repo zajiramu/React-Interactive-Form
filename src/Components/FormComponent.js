@@ -22,6 +22,22 @@ function FormComponent(props) {
                         <option>Other</option>
                     </select>
                 </fieldset> 
+                <fieldset>
+                    <legend>T-Shirt Info</legend>
+                    <label>Size:</label>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <label>Design:</label>
+                    <select>
+                        <option>Select Theme</option>
+                        <option>Theme - JS Puns</option>
+                        <option>Theme - I heart JS</option>
+                    </select>
+                </fieldset>
             </form>
         </div>
     )
