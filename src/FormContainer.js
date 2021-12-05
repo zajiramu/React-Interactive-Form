@@ -5,9 +5,10 @@ class FormContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "Please Enter Your Name",
+            name: "Enter Your Name",
             hasName: true,
-            email: "Please Enter Your Email"
+            email: "Enter Your Email",
+            hasEmail: true
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
