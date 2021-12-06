@@ -5,9 +5,9 @@ class FormContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "Enter Your Name",
+            name: "Enter Name",
             hasName: true,
-            email: "Enter Your Email",
+            email: "Enter Email",
             hasEmail: true
         };
         this.handleChange = this.handleChange.bind(this);
@@ -28,6 +28,13 @@ class FormContainer extends React.Component {
     }
 
     handleFocus(event) {
+        const inputElementName = event.target.name;
+        const inputElementValue = event.target.value;
+        const inputElementInitialValue = "Enter " + inputElementName[0].toUpperCase() + inputElementName.substring(1);
+        if(inputElementValue === inputElementInitialValue) {
+            this.setState( {[inputElementName]: ""} )
+        }
+        
     }
 
     handleBlur(event) {
