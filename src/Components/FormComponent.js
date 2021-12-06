@@ -2,21 +2,25 @@ import React from "react"
 
 function FormComponent(props) {
     // determines if name field is empty by checking relevant property in state object
-    const nameErrorMessage = props.state.hasName ? "" : "*** Please Enter A Name ***"
-    const emailErrorMessage = props.state.hasEmail ? "" : "*** Please Enter An Email ***"
+    const nameErrorMessage = props.state.hasName ? "" : "*** You Must Enter A Name ***";
+    const nameErrorStyle = props.state.hasName ? "" : "error-input-text";
+    const emailErrorMessage = props.state.hasEmail ? "" : "*** You Must Enter An Email ***";
+    const emailErrorStyle = props.state.hasEmail ? "" : "error-input-text";
     return (
         <div>
             <form>
                 <fieldset> 
                     <legend>Basic Info</legend>
                     <label>Name: </label>
-                    <div>{nameErrorMessage}</div>
+                    <div className="error-message">{nameErrorMessage}</div>
                     <input type="text" name="name" value={props.state.name} 
-                           onChange={props.handleChange} onBlur={props.handleBlur} onFocus={props.handleFocus}></input> <br/>
+                           onChange={props.handleChange} onBlur={props.handleBlur} onFocus={props.handleFocus}
+                           className={nameErrorStyle}></input> <br/>
                     <label>Email:</label> 
-                    <div>{emailErrorMessage}</div>
+                    <div className="error-message">{emailErrorMessage}</div>
                     <input type="text" name="email" value={props.state.email} 
-                           onChange={props.handleChange} onBlur={props.handleBlur} onFocus={props.handleFocus}></input> <br/>
+                           onChange={props.handleChange} onBlur={props.handleBlur} onFocus={props.handleFocus}
+                           className={emailErrorStyle}></input> <br/>
                     <label>Job Role:</label>
                     <select>
                         <option>Full-Stack Web Developer</option>
