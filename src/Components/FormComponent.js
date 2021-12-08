@@ -41,7 +41,7 @@ function FormComponent(props) {
                         <option value="xLarge">XL</option>
                     </select>
                     <label>Design:</label>
-                    <select value="noTheme">
+                    <select value="noTheme" onChange={props.handleChange}>
                         <option value="noTheme">Select Theme</option>
                         <option value="puns">Theme - JS Puns</option>
                         <option value="heart">Theme - I heart JS</option>
