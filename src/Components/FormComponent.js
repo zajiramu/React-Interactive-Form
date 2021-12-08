@@ -22,7 +22,7 @@ function FormComponent(props) {
                            onChange={props.handleChange} onBlur={props.handleBlur} onFocus={props.handleFocus}
                            className={emailErrorStyle}></input> <br/>
                     <label>Job Role:</label>
-                    <select>
+                    <select >
                         <option>Full-Stack Web Developer</option>
                         <option>Front End Web Developer</option>
                         <option>Back End Web Developer</option>
@@ -34,14 +34,14 @@ function FormComponent(props) {
                 <fieldset>
                     <legend>T-Shirt Info</legend>
                     <label>Size:</label>
-                    <select value="small">
+                    <select name="size" value={props.state.size} onChange={props.handleDropdown}>
                         <option value="small">S</option>
                         <option value="medium">M</option>
                         <option value="large">L</option>
                         <option value="xLarge">XL</option>
                     </select>
                     <label>Design:</label>
-                    <select value="noTheme" onChange={props.handleChange}>
+                    <select name="design" value={props.state.design} onChange={props.handleDropdown}>
                         <option value="noTheme">Select Theme</option>
                         <option value="puns">Theme - JS Puns</option>
                         <option value="heart">Theme - I heart JS</option>
