@@ -9,8 +9,9 @@ class FormContainer extends React.Component {
             hasName: true,
             email: "Enter Email",
             hasEmail: true,
+            job: "full-stack",
             size: "small",
-            design: "noTheme"
+            design: "no-theme"
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
