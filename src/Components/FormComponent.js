@@ -34,18 +34,19 @@ function FormComponent(props) {
                 <fieldset>
                     <legend>T-Shirt Info</legend>
                     <label>Size:</label>
-                    <select>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
+                    <select value="small">
+                        <option value="small">S</option>
+                        <option value="medium">M</option>
+                        <option value="large">L</option>
+                        <option value="xLarge">XL</option>
                     </select>
                     <label>Design:</label>
-                    <select>
-                        <option>Select Theme</option>
-                        <option>Theme - JS Puns</option>
-                        <option>Theme - I heart JS</option>
+                    <select value="noTheme">
+                        <option value="noTheme">Select Theme</option>
+                        <option value="puns">Theme - JS Puns</option>
+                        <option value="heart">Theme - I heart JS</option>
                     </select>
+                    
                 </fieldset>
             </form>
         </div>
