@@ -7,7 +7,6 @@ function FormComponent(props) {
     const emailErrorMessage = props.state.hasEmail ? "" : "*** You Must Enter An Email ***";
     const emailErrorStyle = props.state.hasEmail ? "" : "error-input-text";
     // checks to see if t-shirt design is selected and displays t-shirt color dropdown
-    //let shirtColorMenu;
     let punsColorOptions = [
         <option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>,
         <option value="darkslategrey">Dark Slate Grey (JS Puns shirt only)</option>, 
@@ -19,19 +18,8 @@ function FormComponent(props) {
         <option value="dimgrey">Dim Grey (I &#9829; JS shirt only)</option> ]; 
     
     let colorOptionsStyle = props.state.design === "no-design" ? {display: "none"} : {display: ""};
-    
-        
-        //const toDisplay = props.state.design === "puns" ? punsColorOptions : heartColorOptions;
-        // shirtColorMenu = 
-        //                 <div>
-        //                     <label>Color:</label>
-        //                     <select name="color" value={props.state.color} onChange={props.handleDropdown}>
-        //                         <option value="no-color">Select Color</option>
-        //                         {props.state.design === "puns" ? punsColorOptions : heartColorOptions}
-        //                     </select>
-        //                 </div>
-    
-
+    // logic for activities checkboxes
+    let isDisabledFirst = props.state.frameworks || props.state.express;
     return (
         <div>
             <form>
@@ -81,25 +69,32 @@ function FormComponent(props) {
                 <fieldset>
                     <legend>Register For Activities</legend>
                     <label>
-                        <input type="checkbox"></input> Main Conference - $200
+                        <input type="checkbox" name="main" onChange={props.handleCheckboxes}></input> 
+                        Main Conference - $200
                     </label> <br/>
                     <label>
-                        <input type="checkbox"></input> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100
+                        <input type="checkbox" name="frameworks" onChange={props.handleCheckboxes} disabled={props.state.express}></input> 
+                        JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox"></input> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100
+                        <input type="checkbox" name="libs" onChange={props.handleCheckboxes} disabled={props.state.node}></input> 
+                        JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox"></input> Express Workshop — Tuesday 9am-12pm, $100
+                        <input type="checkbox" name="express" onChange={props.handleCheckboxes} disabled={props.state.frameworks}></input> 
+                        Express Workshop — Tuesday 9am-12pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox"></input> Node.js Workshop — Tuesday 1pm-4pm, $100
+                        <input type="checkbox" name="node" onChange={props.handleCheckboxes} disabled={props.state.libs}></input> 
+                        Node.js Workshop — Tuesday 1pm-4pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox"></input> Build tools Workshop — Wednesday 9am-12pm, $100
+                        <input type="checkbox" name="build" onChange={props.handleCheckboxes}></input> 
+                        Build tools Workshop — Wednesday 9am-12pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox"></input> npm Workshop — Wednesday 1pm-4pm, $100
+                        <input type="checkbox" name="npm" onChange={props.handleCheckboxes}></input> 
+                        npm Workshop — Wednesday 1pm-4pm, $100
                     </label> <br/>
                 </fieldset>
             </form>
