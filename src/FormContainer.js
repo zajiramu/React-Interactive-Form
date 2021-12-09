@@ -11,7 +11,8 @@ class FormContainer extends React.Component {
             hasEmail: true,
             job: "full-stack",
             size: "small",
-            design: "no-theme"
+            design: "no-design",
+            color: "no-color"
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleFocus = this.handleFocus.bind(this);

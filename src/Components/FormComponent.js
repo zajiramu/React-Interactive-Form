@@ -6,6 +6,32 @@ function FormComponent(props) {
     const nameErrorStyle = props.state.hasName ? "" : "error-input-text";
     const emailErrorMessage = props.state.hasEmail ? "" : "*** You Must Enter An Email ***";
     const emailErrorStyle = props.state.hasEmail ? "" : "error-input-text";
+    // checks to see if t-shirt design is selected and displays t-shirt color dropdown
+    //let shirtColorMenu;
+    let punsColorOptions = [
+        <option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>,
+        <option value="darkslategrey">Dark Slate Grey (JS Puns shirt only)</option>, 
+        <option value="gold">Gold (JS Puns shirt only)</option> ];
+
+    let heartColorOptions = [
+        <option value="tomato">Tomato (I &#9829; JS shirt only)</option>,
+        <option value="steelblue">Steel Blue (I &#9829; JS shirt only)</option>, 
+        <option value="dimgrey">Dim Grey (I &#9829; JS shirt only)</option> ]; 
+    
+    let colorOptionsStyle = props.state.design === "no-design" ? {display: "none"} : {display: ""};
+    
+        
+        //const toDisplay = props.state.design === "puns" ? punsColorOptions : heartColorOptions;
+        // shirtColorMenu = 
+        //                 <div>
+        //                     <label>Color:</label>
+        //                     <select name="color" value={props.state.color} onChange={props.handleDropdown}>
+        //                         <option value="no-color">Select Color</option>
+        //                         {props.state.design === "puns" ? punsColorOptions : heartColorOptions}
+        //                     </select>
+        //                 </div>
+    
+
     return (
         <div>
             <form>
@@ -42,9 +68,14 @@ function FormComponent(props) {
                     </select>
                     <label>Design:</label>
                     <select name="design" value={props.state.design} onChange={props.handleDropdown}>
-                        <option value="no-theme">Select Theme</option>
+                        <option value="no-design">Select Theme</option>
                         <option value="puns">Theme - JS Puns</option>
                         <option value="heart">Theme - I heart JS</option>
+                    </select>
+                    <label style={colorOptionsStyle}> Color:</label>
+                    <select name="color" value={props.state.color} onChange={props.handleDropdown} style={colorOptionsStyle}>
+                        <option value="no-color">Select Color</option>
+                        {props.state.design === "puns" ? punsColorOptions : heartColorOptions}
                     </select>
                     
                 </fieldset>
