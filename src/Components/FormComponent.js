@@ -77,7 +77,30 @@ function FormComponent(props) {
                         <option value="no-color">Select Color</option>
                         {props.state.design === "puns" ? punsColorOptions : heartColorOptions}
                     </select>
-                    
+                </fieldset>
+                <fieldset>
+                    <legend>Register For Activities</legend>
+                    <label>
+                        <input type="checkbox"></input> Main Conference - $200
+                    </label> <br/>
+                    <label>
+                        <input type="checkbox"></input> JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100
+                    </label> <br/>
+                    <label>
+                        <input type="checkbox"></input> JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100
+                    </label> <br/>
+                    <label>
+                        <input type="checkbox"></input> Express Workshop — Tuesday 9am-12pm, $100
+                    </label> <br/>
+                    <label>
+                        <input type="checkbox"></input> Node.js Workshop — Tuesday 1pm-4pm, $100
+                    </label> <br/>
+                    <label>
+                        <input type="checkbox"></input> Build tools Workshop — Wednesday 9am-12pm, $100
+                    </label> <br/>
+                    <label>
+                        <input type="checkbox"></input> npm Workshop — Wednesday 1pm-4pm, $100
+                    </label> <br/>
                 </fieldset>
             </form>
         </div>
