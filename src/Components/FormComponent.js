@@ -19,7 +19,7 @@ function FormComponent(props) {
     
     let colorOptionsStyle = props.state.design === "no-design" ? {display: "none"} : {display: ""};
     // logic for activities checkboxes
-    let isDisabledFirst = props.state.frameworks || props.state.express;
+
     return (
         <div>
             <form>
@@ -44,6 +44,7 @@ function FormComponent(props) {
                         <option value="student">Student</option>
                         <option value="other">Other</option>
                     </select>
+                    
                 </fieldset> 
                 <fieldset>
                     <legend>T-Shirt Info</legend>
@@ -69,33 +70,43 @@ function FormComponent(props) {
                 <fieldset>
                     <legend>Register For Activities</legend>
                     <label>
-                        <input type="checkbox" name="main" onChange={props.handleCheckboxes}></input> 
+                        <input type="checkbox" name="main" value="200" 
+                               onChange={props.handleCheckboxes}></input> 
                         Main Conference - $200
                     </label> <br/>
                     <label>
-                        <input type="checkbox" name="frameworks" onChange={props.handleCheckboxes} disabled={props.state.express}></input> 
+                        <input type="checkbox" name="frameworks" value="100" 
+                               onChange={props.handleCheckboxes} disabled={props.state.express}></input> 
                         JavaScript Frameworks Workshop — Tuesday 9am-12pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox" name="libs" onChange={props.handleCheckboxes} disabled={props.state.node}></input> 
+                        <input type="checkbox" name="libs" value="100" 
+                               onChange={props.handleCheckboxes} disabled={props.state.node}></input> 
                         JavaScript Libraries Workshop — Tuesday 1pm-4pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox" name="express" onChange={props.handleCheckboxes} disabled={props.state.frameworks}></input> 
+                        <input type="checkbox" name="express" value="100"
+                               onChange={props.handleCheckboxes} disabled={props.state.frameworks}></input> 
                         Express Workshop — Tuesday 9am-12pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox" name="node" onChange={props.handleCheckboxes} disabled={props.state.libs}></input> 
+                        <input type="checkbox" name="node" value="100"  
+                               onChange={props.handleCheckboxes} disabled={props.state.libs}></input> 
                         Node.js Workshop — Tuesday 1pm-4pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox" name="build" onChange={props.handleCheckboxes}></input> 
+                        <input type="checkbox" name="build" value="100" 
+                               onChange={props.handleCheckboxes}></input> 
                         Build tools Workshop — Wednesday 9am-12pm, $100
                     </label> <br/>
                     <label>
-                        <input type="checkbox" name="npm" onChange={props.handleCheckboxes}></input> 
+                        <input type="checkbox" name="npm" value="100" 
+                               onChange={props.handleCheckboxes}></input> 
                         npm Workshop — Wednesday 1pm-4pm, $100
                     </label> <br/>
+                    <div style={props.state.total ? {display: ""} : {display: "none"}}>
+                        <b> Total = ${props.state.total} </b>
+                    </div>
                 </fieldset>
             </form>
         </div>

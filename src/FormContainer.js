@@ -19,7 +19,8 @@ class FormContainer extends React.Component {
             express: false,
             node: false,
             build: false, 
-            npm: false   
+            npm: false,
+            total: 0 
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
@@ -65,9 +66,15 @@ class FormContainer extends React.Component {
     }
 
     handleCheckboxes(event) {
+        const checkboxName = event.target.name;
+        const checkboxValue = Number(event.target.value);
+        const isChecked = event.target.checked;
+        let prevTotal = this.state.total;
+        let newTotal = isChecked ? (prevTotal + checkboxValue) : (prevTotal - checkboxValue)
         const newState = {
-            [event.target.name]: event.target.checked
-        };
+            [checkboxName]: isChecked,
+            total: newTotal
+        }
         this.setState(newState);
     }
 
